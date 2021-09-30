@@ -96,3 +96,21 @@ TEST(BigIntTest, SubtractionTest){
 TEST(BigIntTest, UnaryMinusTest){
     EXPECT_EQ(-BigInteger(100), -100);
 }
+
+TEST(BigIntTest, MultiplicaionTest){
+    BigInteger bi1(24);
+    BigInteger bi2(58);
+    BigInteger one(1);
+    BigInteger zero(0);
+    EXPECT_EQ(bi1 * bi2, 1392);
+    EXPECT_EQ(bi2 * bi1, 1392);
+    EXPECT_EQ(-bi1 * -bi2, 1392);
+    EXPECT_EQ(bi1 * -bi2, -1392);
+    EXPECT_EQ(bi1 * -bi2, -1392);
+    EXPECT_EQ(bi1 * one, 24);
+    EXPECT_EQ(one * bi1, 24);
+    EXPECT_EQ(bi1 * -one, -24);
+    EXPECT_EQ(-one * bi1, -24);
+    EXPECT_EQ(zero * bi1, 0);
+    EXPECT_EQ(bi1 * zero, 0);
+}
