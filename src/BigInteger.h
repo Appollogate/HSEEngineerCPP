@@ -32,9 +32,17 @@ public:
 
     BigInteger &operator-=(const BigInteger &);
 
-    BigInteger operator*(const BigInteger &);
+    BigInteger operator*(const BigInteger &) const;
 
     BigInteger &operator*=(const BigInteger &);
+
+    BigInteger operator/(const BigInteger &) const;
+
+    BigInteger &operator/=(const BigInteger &);
+
+    BigInteger operator%(const BigInteger &) const;
+
+    BigInteger &operator%=(const BigInteger &);
 
     bool operator<(const BigInteger &) const;
 
@@ -61,9 +69,15 @@ private:
 
     void subtract(const BigInteger &);
 
-    [[nodiscard]] bool abs_goe(const BigInteger &) const; // Absolute Greater or Equal
+    [[nodiscard]] std::pair<BigInteger, BigInteger> divide(const BigInteger &) const;
 
     void RemoveLeadingZeros();
+
+    [[nodiscard]] BigInteger SelectClosestByFront(const BigInteger &, int div_len) const;
+
+    [[nodiscard]] ushort GetMultiplier(const BigInteger &) const;
+
+    [[nodiscard]] bool abs_goe(const BigInteger &) const; // Absolute Greater or Equal
 
     std::vector<ushort> digits;
     bool is_negative;

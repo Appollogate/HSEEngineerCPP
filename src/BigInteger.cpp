@@ -99,7 +99,7 @@ BigInteger &BigInteger::operator-=(const BigInteger &rhs) {
     return *this;
 }
 
-BigInteger BigInteger::operator*(const BigInteger &rhs) {
+BigInteger BigInteger::operator*(const BigInteger &rhs) const {
     BigInteger res(*this);
     res *= rhs;
     return res;
@@ -130,6 +130,28 @@ BigInteger &BigInteger::operator*=(const BigInteger &rhs) {
     return *this;
 }
 
+BigInteger BigInteger::operator/(const BigInteger &rhs) const {
+    BigInteger res(*this);
+    res /= rhs;
+    return res;
+}
+
+BigInteger &BigInteger::operator/=(const BigInteger &rhs) {
+    *this = this->divide(rhs).first;
+    return *this;
+}
+
+BigInteger BigInteger::operator%(const BigInteger &rhs) const {
+    BigInteger res(*this);
+    res %= rhs;
+    return res;
+}
+
+BigInteger &BigInteger::operator%=(const BigInteger &rhs) {
+    *this = this->divide(rhs).second;
+    return *this;
+}
+
 bool BigInteger::operator<(const BigInteger &rhs) const {
     // Check the signs first
     if (this->is_negative && !rhs.is_negative) {
@@ -147,7 +169,7 @@ bool BigInteger::operator<(const BigInteger &rhs) const {
         return this->is_negative;
     }
     // If number length is equal, start checking by digits
-    for (int i = 0; i < rhs.digits.size(); ++i) {
+    for (int i = static_cast<int>(rhs.digits.size()) - 1; i >= 0; --i) {
         if (rhs.digits[i] > this->digits[i]) {
             return !this->is_negative;
         }
@@ -246,6 +268,53 @@ void BigInteger::subtract(const BigInteger &rhs) {
         }
     }
     RemoveLeadingZeros();
+}
+
+BigInteger BigInteger::SelectClosestByFront(const BigInteger &rhs, int div_len) const {
+    BigInteger selected;
+    selected.digits = std::vector<ushort>(digits.end() - div_len, digits.end());
+    if (selected.abs_goe(rhs)) {
+        return selected;
+    }
+    selected.digits = std::vector<ushort>(digits.end() - div_len - 1, digits.end());
+    return selected;
+}
+
+ushort BigInteger::GetMultiplier(const BigInteger &rhs) const {
+    for (ushort i = 0; i < 10; ++i) {
+        if (!this->abs_goe(rhs * i)) {
+            return i - 1;
+        }
+    }
+    return 9;
+}
+
+std::pair<BigInteger, BigInteger> BigInteger::divide(const BigInteger &rhs) const {
+    if (rhs == 0){
+        throw std::invalid_argument("Cannot divide by zero.\n");
+    }
+    BigInteger current;
+    BigInteger quotient;
+    // Determine the current number from which we will subtract
+    current = digits.size() <= rhs.digits.size() ?
+              *this :
+              SelectClosestByFront(rhs, static_cast<int>(rhs.digits.size()));
+    int lhs_curr_ind = static_cast<int>(current.digits.size() - 1);
+    while (lhs_curr_ind < this->digits.size()) {
+        ushort multiplier = current.GetMultiplier(rhs);
+        quotient.digits.push_back(multiplier);
+        current -= rhs * multiplier;
+        ++lhs_curr_ind;
+        while (rhs.abs_goe(current) && lhs_curr_ind < static_cast<int>(this->digits.size())) {
+            current.digits.insert(current.digits.begin(), digits[digits.size() - lhs_curr_ind - 1]);
+        }
+    }
+    std::reverse(quotient.digits.begin(), quotient.digits.end());
+    // Determine the signs for quotient and remainder
+    quotient.is_negative = this->is_negative ^ rhs.is_negative;
+    current.is_negative = this->is_negative;
+    // At this point "current" is the remainder
+    return std::make_pair(quotient, current);
 }
 
 void BigInteger::RemoveLeadingZeros() {

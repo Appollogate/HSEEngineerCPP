@@ -7,6 +7,7 @@
 
 TEST(BigIntTest, GreaterThanTestPos){
     EXPECT_GT(BigInteger(2), BigInteger(1));
+    EXPECT_GT(BigInteger(172), BigInteger(164));
 }
 
 TEST(BigIntTest, GreaterThanTestNeg){
