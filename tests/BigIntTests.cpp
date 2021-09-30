@@ -58,19 +58,39 @@ TEST(BigIntTest, StringReprTest){
 TEST(BigIntTest, AdditionTest){
     BigInteger five(5);
     BigInteger two(2);
+    BigInteger zero(0);
+    BigInteger hundred(100);
     EXPECT_EQ(five + two, 7);
     EXPECT_EQ(-five + -two, -7);
     EXPECT_EQ(five + -two, 3);
     EXPECT_EQ(-five + two, -3);
+    EXPECT_EQ(five + zero, 5);
+    EXPECT_EQ(five + -zero, 5);
+    EXPECT_EQ(hundred + five, 105);
+    EXPECT_EQ(hundred + -five, 95);
+    EXPECT_EQ(-hundred + five, -95);
+    EXPECT_EQ(-hundred + -five, -105);
+    EXPECT_EQ(hundred + five + two, 107);
 }
 
 TEST(BigIntTest, SubtractionTest){
     BigInteger five(5);
     BigInteger two(2);
+    BigInteger zero(0);
+    BigInteger hundred(100);
     EXPECT_EQ(five - two, 3);
     EXPECT_EQ(-five - -two, -3);
     EXPECT_EQ(five - -two, 7);
     EXPECT_EQ(-five - two, -7);
+    EXPECT_EQ(five - zero, 5);
+    EXPECT_EQ(five - -zero, 5);
+    EXPECT_EQ(zero - five, -5);
+    EXPECT_EQ(zero - -five, 5);
+    EXPECT_EQ(two - hundred, -98);
+    EXPECT_EQ(hundred - two, 98);
+    EXPECT_EQ(zero - hundred, -100);
+    EXPECT_EQ(-hundred + five, -95);
+    EXPECT_EQ(hundred - five - two, 93);
 }
 
 TEST(BigIntTest, UnaryMinusTest){

@@ -14,6 +14,8 @@
 
 class BigInteger {
 public:
+    BigInteger();
+
     BigInteger(int64_t);
 
     BigInteger(const std::string &);
@@ -24,11 +26,15 @@ public:
 
     BigInteger operator+(const BigInteger &) const;
 
-    BigInteger& operator+=(const BigInteger &);
+    BigInteger &operator+=(const BigInteger &);
 
     BigInteger operator-(const BigInteger &) const;
 
-    BigInteger& operator-=(const BigInteger &);
+    BigInteger &operator-=(const BigInteger &);
+
+    BigInteger operator*(const BigInteger &);
+
+    BigInteger &operator*=(const BigInteger &);
 
     bool operator<(const BigInteger &) const;
 
@@ -48,7 +54,7 @@ public:
 
     [[nodiscard]] std::string GetStringRepr() const;
 
-    friend std::ostream& operator <<(std::ostream&, const BigInteger&);
+    friend std::ostream &operator<<(std::ostream &, const BigInteger &);
 
 private:
     void add(const BigInteger &);

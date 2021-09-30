@@ -4,7 +4,14 @@
 
 #include "BigInteger.h"
 
+BigInteger::BigInteger() {
+    is_negative = false;
+}
+
 BigInteger::BigInteger(int64_t num) {
+    if (num == 0) {
+        digits.push_back(0);
+    }
     is_negative = num < 0;
     while (num != 0) {
         ushort digit = std::abs(num % 10);
@@ -89,6 +96,37 @@ BigInteger &BigInteger::operator-=(const BigInteger &rhs) {
     } else { // If operands have opposing signs, switch to addition
         add(rhs);
     }
+    return *this;
+}
+
+BigInteger BigInteger::operator*(const BigInteger &rhs) {
+    BigInteger res(*this);
+    res *= rhs;
+    return res;
+}
+
+BigInteger &BigInteger::operator*=(const BigInteger &rhs) {
+    int remainder = 0;
+    BigInteger res(0);
+    for (size_t i = 0; i < digits.size(); ++i) {
+        BigInteger current;
+        for (int k = 0; k < i; ++k) {
+            current.digits.push_back(0);
+        }
+        for (ushort r_digit: rhs.digits) {
+            int multi_res = digits[i] * r_digit + remainder;
+            current.digits.push_back(multi_res % 10);
+            remainder = multi_res / 10;
+        }
+        if (remainder != 0) {
+            current.digits.push_back(remainder);
+            remainder = 0;
+        }
+        res += current;
+    }
+    res.is_negative = this->is_negative ^ rhs.is_negative;
+    *this = res;
+    RemoveLeadingZeros();
     return *this;
 }
 
@@ -188,13 +226,17 @@ void BigInteger::subtract(const BigInteger &rhs) {
     int l_dig; // Current digit of left operand
     int r_dig; // Current digit of right operand
     int sub; // Current digit of result of subtraction
-    for (int i = 0; i < this->digits.size(); ++i) {
-        l_dig = this->digits[i];
+    size_t max_size = is_lhs_bigger ? digits.size() : rhs.digits.size(); // Determine max number of iterations
+    for (int i = 0; i < max_size; ++i) {
+        l_dig = i >= digits.size() ? 0 : digits[i];
         r_dig = i >= rhs.digits.size() ? 0 : rhs.digits[i];
         // Calculate result of subtraction for current digits
         sub = (is_lhs_bigger ?
                l_dig - r_dig - borrow :
                r_dig - l_dig - borrow);
+        if (i < digits.size()) { // If *this is oo short, enlarge it
+            digits.push_back(0);
+        }
         if (sub < 0) {
             this->digits[i] = sub + 10;
             borrow = 1;
@@ -207,7 +249,7 @@ void BigInteger::subtract(const BigInteger &rhs) {
 }
 
 void BigInteger::RemoveLeadingZeros() {
-    while (digits[digits.size() - 1] == 0) {
+    while (digits.size() > 1 && digits[digits.size() - 1] == 0) {
         digits.pop_back();
     }
 }
