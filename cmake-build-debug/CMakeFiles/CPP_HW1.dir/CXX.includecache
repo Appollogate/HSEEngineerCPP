@@ -332,12 +332,6 @@ cxxabi.h
 acxx_demangle.h
 -
 
-/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/main.cpp
-gtest/gtest.h
--
-src/BigInteger.h
-/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/src/BigInteger.h
-
 /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/src/BigInteger.h
 vector
 -
@@ -349,4 +343,10 @@ exception
 -
 sstream
 -
+
+/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/tests/BigIntTests.cpp
+gtest/gtest.h
+-
+../src/BigInteger.h
+/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/src/BigInteger.h
 

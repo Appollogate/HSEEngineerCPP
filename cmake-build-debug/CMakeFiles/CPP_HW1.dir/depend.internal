@@ -23,7 +23,6 @@ CMakeFiles/CPP_HW1.dir/main.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
  /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/main.cpp
- /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/src/BigInteger.h
 CMakeFiles/CPP_HW1.dir/src/BigInteger.cpp.o
  /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/src/BigInteger.cpp
  /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/src/BigInteger.h
@@ -48,4 +47,5 @@ CMakeFiles/CPP_HW1.dir/tests/BigIntTests.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-port.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/src/BigInteger.h
  /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/tests/BigIntTests.cpp

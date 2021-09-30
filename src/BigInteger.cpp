@@ -117,7 +117,7 @@ bool BigInteger::operator<(const BigInteger &rhs) const {
             return this->is_negative;
     }
     // At this point the numbers would be equal
-    return this->is_negative;
+    return false;
 }
 
 bool BigInteger::operator>(const BigInteger &rhs) const {
