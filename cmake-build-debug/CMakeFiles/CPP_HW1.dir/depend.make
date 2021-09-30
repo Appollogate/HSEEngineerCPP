@@ -22,7 +22,8 @@ CMakeFiles/CPP_HW1.dir/main.cpp.o: \
  ../lib/googletest/googletest/include/gtest/internal/gtest-port.h \
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h \
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h \
- ../main.cpp
+ ../main.cpp \
+ ../src/BigInteger.h
 CMakeFiles/CPP_HW1.dir/src/BigInteger.cpp.o: \
  ../src/BigInteger.cpp \
  ../src/BigInteger.h

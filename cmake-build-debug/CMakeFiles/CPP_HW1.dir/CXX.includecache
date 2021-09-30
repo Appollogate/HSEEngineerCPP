@@ -333,13 +333,9 @@ acxx_demangle.h
 -
 
 /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/main.cpp
-iostream
--
 gtest/gtest.h
 -
-
-/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/src/BigInteger.cpp
-BigInteger.h
+src/BigInteger.h
 /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/src/BigInteger.h
 
 /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/src/BigInteger.h
@@ -352,9 +348,5 @@ utility
 exception
 -
 sstream
--
-
-/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/tests/BigIntTests.cpp
-gtest/gtest.h
 -
 

@@ -28,6 +28,8 @@ public:
 
     BigInteger operator-(const BigInteger &) const;
 
+    BigInteger& operator-=(const BigInteger &);
+
     bool operator<(const BigInteger &) const;
 
     bool operator>(const BigInteger &) const;
@@ -46,10 +48,12 @@ public:
 
     [[nodiscard]] std::string GetStringRepr() const;
 
-private:
-    BigInteger abs_add(const BigInteger &, const BigInteger &) const;
+    friend std::ostream& operator <<(std::ostream&, const BigInteger&);
 
-    BigInteger abs_subtract(const BigInteger &, const BigInteger &) const;
+private:
+    void add(const BigInteger &);
+
+    void subtract(const BigInteger &);
 
     [[nodiscard]] bool abs_goe(const BigInteger &) const; // Absolute Greater or Equal
 

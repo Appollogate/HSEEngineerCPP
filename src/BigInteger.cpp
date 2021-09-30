@@ -63,58 +63,33 @@ std::string BigInteger::GetStringRepr() const {
 
 
 BigInteger BigInteger::operator+(const BigInteger &rhs) const {
-    if (this->is_negative == rhs.is_negative) { // If signs match on both arguments
-        if (!this->is_negative) { // If both signs are positive (ex: 2 + 5)
-            return BigInteger::abs_add(*this, rhs);
-        } else { // If both signs are negative (ex: -2 + -5)
-            BigInteger res = BigInteger::abs_add(*this, rhs);
-            res.is_negative = true; // Sum of two negative numbers will be negative
-            return res;
-        }
-    } else { // If signs differ, switch to subtraction
-        if (!this->is_negative) { // If first sign is positive and second is negative
-            if (this->abs_goe(rhs)) { // ex: 5 + -2
-                return BigInteger::abs_subtract(*this, rhs);
-            } else { // ex: 2 + -5
-                return -BigInteger::abs_subtract(rhs, *this);
-            }
-        } else { // If first sign is negative and second one is positive
-            if (this->abs_goe(rhs)) { // ex: -5 + 2
-                return -BigInteger::abs_subtract(*this, rhs);
-            } else { // ex: -2 + 5
-                return BigInteger::abs_subtract(rhs, *this);
-            }
-        }
-    }
+    BigInteger res(*this);
+    res += rhs;
+    return res;
 }
 
 BigInteger &BigInteger::operator+=(const BigInteger &rhs) {
-    *this = *this + rhs;
+    if (this->is_negative == rhs.is_negative) { // If signs match on both arguments
+        add(rhs);
+    } else { // If signs differ, switch to subtraction
+        subtract(rhs);
+    }
     return *this;
 }
 
 BigInteger BigInteger::operator-(const BigInteger &rhs) const {
+    BigInteger res(*this);
+    res -= rhs;
+    return res;
+}
+
+BigInteger &BigInteger::operator-=(const BigInteger &rhs) {
     if (this->is_negative == rhs.is_negative) { // If both numbers share the same sign
-        if (!this->is_negative) { // If both operands are non-negative
-            if (this->abs_goe(rhs)) {  // If |lhs| >= |rhs|, ex: 5 - 2
-                return BigInteger::abs_subtract(*this, rhs);
-            } else { // If |lhs| < |rhs|, ex: 2 - 5
-                return -BigInteger::abs_subtract(rhs, *this);
-            }
-        } else { // If both operands are negative
-            if (this->abs_goe(rhs)) { // If |lhs| >= |rhs|, ex: -5 - -2
-                return -BigInteger::abs_subtract(*this, rhs);
-            } else { // If |lhs| < |rhs|, ex: -2 - -5
-                return BigInteger::abs_subtract(rhs, *this);
-            }
-        }
+        subtract(rhs);
     } else { // If operands have opposing signs, switch to addition
-        if (!this->is_negative) {// If first operand is non-negative and second one is negative, ex: 2 - -5 or 5 - -2
-            return BigInteger::abs_add(*this, rhs);
-        } else { // If first operand is negative and second one is not, ex: -5 - 2 or -2 - 5
-            return -BigInteger::abs_add(*this, rhs);
-        }
+        add(rhs);
     }
+    return *this;
 }
 
 bool BigInteger::operator<(const BigInteger &rhs) const {
@@ -166,7 +141,8 @@ bool BigInteger::operator<=(const BigInteger &rhs) const {
 }
 
 std::ostream &operator<<(std::ostream &os, const BigInteger &bi) {
-    return os << bi.GetStringRepr();
+    os << bi.GetStringRepr();
+    return os;
 }
 
 BigInteger BigInteger::operator-() const {
@@ -179,52 +155,55 @@ BigInteger BigInteger::operator+() const {
     return *this;
 }
 
-BigInteger BigInteger::abs_add(const BigInteger &lhs, const BigInteger &rhs) const { // |lhs| + |rhs| basically
-    BigInteger res(lhs);
-    res.is_negative = false; // Sum of two non-negative numbers cannot be negative
-    int l_ind = 0; // Index of current digit of left operand
-    int r_ind = 0; // Index of current digit of right operand
-    int l_dig = 0; // Current digit in left operand
-    int r_dig = 0; // Current digit in right operand
+void BigInteger::add(const BigInteger &rhs) {
+    int l_ind = 0; // Index of current digit of left operand (this)
+    int r_ind = 0; // Index of current digit of right operand (rhs)
+    int l_dig; // Current digit in left operand (this)
+    int r_dig; // Current digit in right operand (rhs)
     int remainder = 0;
-    while (l_ind < res.digits.size() || r_ind < rhs.digits.size() || remainder != 0) {
-        l_dig = (l_ind >= res.digits.size() ? 0 : res.digits[l_ind]); // Get current digit from left operand
-        r_dig = (r_ind >= rhs.digits.size() ? 0 : rhs.digits[r_ind]); // Get current digit from right operand
-        if (l_ind >= res.digits.size()) { // If right number is longer than the left
-            res.digits.push_back(0); // add extra digit to left number
+    while (l_ind < this->digits.size() || r_ind < rhs.digits.size() || remainder != 0) {
+        l_dig = (l_ind >= this->digits.size() ? 0
+                                              : this->digits[l_ind]); // Get current digit from left operand (this)
+        r_dig = (r_ind >= rhs.digits.size() ? 0 : rhs.digits[r_ind]); // Get current digit from right operand (rhs)
+        if (l_ind >= this->digits.size()) { // If right number is longer than the left
+            this->digits.push_back(0); // Add extra digit to left number
         }
         int sum_digit =
                 l_dig + r_dig + remainder; // Add 2 digits together, including possible remainder from previous sum
-        res.digits[l_ind] = sum_digit % 10;
+        this->digits[l_ind] = sum_digit % 10;
         remainder = sum_digit / 10;
         ++l_ind;
         ++r_ind;
     }
-    return res;
 }
 
-BigInteger BigInteger::abs_subtract(const BigInteger &lhs, const BigInteger &rhs) const {
-    // Left-side argument absolute value should always be greater than the right one
-    BigInteger res(lhs);
-    res.is_negative = false;
+void BigInteger::subtract(const BigInteger &rhs) {
+    // Determine a criteria for the resulting sign
+    bool is_res_neg = is_negative && abs_goe(rhs) || !is_negative && rhs.abs_goe(*this);
+    // Determine if the left argument absolute value is larger than the right one's
+    bool is_lhs_bigger = abs_goe(rhs);
+    // Result is always writen in *this, regardless of which operand is greater by absolute value.
+    this->is_negative = is_res_neg; // Set the resulting sign
     int borrow = 0;
-    int l_dig = 0;
-    int r_dig = 0;
-    int sub = 0;
-    for (int i = 0; i < res.digits.size(); ++i) {
-        l_dig = res.digits[i];
+    int l_dig; // Current digit of left operand
+    int r_dig; // Current digit of right operand
+    int sub; // Current digit of result of subtraction
+    for (int i = 0; i < this->digits.size(); ++i) {
+        l_dig = this->digits[i];
         r_dig = i >= rhs.digits.size() ? 0 : rhs.digits[i];
-        sub = l_dig - r_dig - borrow; // Calculate result of subtraction for current digits
+        // Calculate result of subtraction for current digits
+        sub = (is_lhs_bigger ?
+               l_dig - r_dig - borrow :
+               r_dig - l_dig - borrow);
         if (sub < 0) {
-            res.digits[i] = sub + 10;
+            this->digits[i] = sub + 10;
             borrow = 1;
         } else {
-            res.digits[i] = sub;
+            this->digits[i] = sub;
             borrow = 0;
         }
     }
-    res.RemoveLeadingZeros();
-    return res;
+    RemoveLeadingZeros();
 }
 
 void BigInteger::RemoveLeadingZeros() {
