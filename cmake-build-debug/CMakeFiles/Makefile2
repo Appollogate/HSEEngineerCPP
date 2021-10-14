@@ -45,19 +45,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1
+CMAKE_SOURCE_DIR = /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -134,14 +134,14 @@ lib/googletest/googletest/clean: lib/googletest/googletest/CMakeFiles/gtest.dir/
 CMakeFiles/CPP_HW1.dir/all: lib/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPP_HW1.dir/build.make CMakeFiles/CPP_HW1.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPP_HW1.dir/build.make CMakeFiles/CPP_HW1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target CPP_HW1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target CPP_HW1"
 .PHONY : CMakeFiles/CPP_HW1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CPP_HW1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CPP_HW1.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/CPP_HW1.dir/rule
 
 # Convenience name for target.
@@ -157,18 +157,18 @@ CMakeFiles/CPP_HW1.dir/clean:
 # Target rules for target lib/googletest/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all: lib/googletest/googlemock/CMakeFiles/gmock.dir/all
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all: lib/googletest/googletest/CMakeFiles/gtest.dir/all
+lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all: lib/googletest/googlemock/CMakeFiles/gmock.dir/all
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target gmock_main"
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles 0
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock_main.dir/rule
 
 # Convenience name for target.
@@ -187,14 +187,14 @@ lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean:
 lib/googletest/googlemock/CMakeFiles/gmock.dir/all: lib/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target gmock"
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
 lib/googletest/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/googlemock/CMakeFiles/gmock.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles 0
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock.dir/rule
 
 # Convenience name for target.
@@ -213,14 +213,14 @@ lib/googletest/googlemock/CMakeFiles/gmock.dir/clean:
 lib/googletest/googletest/CMakeFiles/gtest_main.dir/all: lib/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googletest/CMakeFiles/gtest_main.dir/build.make lib/googletest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googletest/CMakeFiles/gtest_main.dir/build.make lib/googletest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target gtest_main"
 .PHONY : lib/googletest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 lib/googletest/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/googletest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles 0
 .PHONY : lib/googletest/googletest/CMakeFiles/gtest_main.dir/rule
 
 # Convenience name for target.
@@ -239,14 +239,14 @@ lib/googletest/googletest/CMakeFiles/gtest_main.dir/clean:
 lib/googletest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googletest/CMakeFiles/gtest.dir/build.make lib/googletest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googletest/CMakeFiles/gtest.dir/build.make lib/googletest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target gtest"
 .PHONY : lib/googletest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 lib/googletest/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/googletest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles 0
 .PHONY : lib/googletest/googletest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.

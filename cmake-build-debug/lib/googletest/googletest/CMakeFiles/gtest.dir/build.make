@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1
+CMAKE_SOURCE_DIR = /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include lib/googletest/googletest/CMakeFiles/gtest.dir/depend.make
@@ -68,16 +68,16 @@ include lib/googletest/googletest/CMakeFiles/gtest.dir/flags.make
 
 lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: lib/googletest/googletest/CMakeFiles/gtest.dir/flags.make
 lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: ../lib/googletest/googletest/src/gtest-all.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googletest && /usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/lib/googletest/googletest/src/gtest-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/lib/googletest/googletest/src/gtest-all.cc
 
 lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest.dir/src/gtest-all.cc.i"
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googletest && /usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/lib/googletest/googletest/src/gtest-all.cc > CMakeFiles/gtest.dir/src/gtest-all.cc.i
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/lib/googletest/googletest/src/gtest-all.cc > CMakeFiles/gtest.dir/src/gtest-all.cc.i
 
 lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest.dir/src/gtest-all.cc.s"
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googletest && /usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/lib/googletest/googletest/src/gtest-all.cc -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/lib/googletest/googletest/src/gtest-all.cc -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
 
 # Object files for target gtest
 gtest_OBJECTS = \
@@ -89,19 +89,19 @@ gtest_EXTERNAL_OBJECTS =
 lib/libgtestd.a: lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 lib/libgtestd.a: lib/googletest/googletest/CMakeFiles/gtest.dir/build.make
 lib/libgtestd.a: lib/googletest/googletest/CMakeFiles/gtest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../libgtestd.a"
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean_target.cmake
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../libgtestd.a"
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean_target.cmake
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/googletest/googletest/CMakeFiles/gtest.dir/build: lib/libgtestd.a
 .PHONY : lib/googletest/googletest/CMakeFiles/gtest.dir/build
 
 lib/googletest/googletest/CMakeFiles/gtest.dir/clean:
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean.cmake
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean.cmake
 .PHONY : lib/googletest/googletest/CMakeFiles/gtest.dir/clean
 
 lib/googletest/googletest/CMakeFiles/gtest.dir/depend:
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1 /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/lib/googletest/googletest /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googletest /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/lib/googletest/googletest /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googletest /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/googletest/googletest/CMakeFiles/gtest.dir/depend
 

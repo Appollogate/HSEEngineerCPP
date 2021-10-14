@@ -1,1 +1,1 @@
-/usr/bin/g++-9 -g CMakeFiles/CPP_HW1.dir/main.cpp.o CMakeFiles/CPP_HW1.dir/src/BigInteger.cpp.o CMakeFiles/CPP_HW1.dir/tests/BigIntTests.cpp.o -o CPP_HW1  lib/libgtestd.a -lpthread 
+/usr/bin/c++ -g CMakeFiles/CPP_HW1.dir/main.cpp.o CMakeFiles/CPP_HW1.dir/src/BigInteger.cpp.o CMakeFiles/CPP_HW1.dir/tests/BigIntTests.cpp.o -o CPP_HW1  lib/libgtestd.a -lpthread 

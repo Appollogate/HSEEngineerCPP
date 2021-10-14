@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/main.cpp" "/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles/CPP_HW1.dir/main.cpp.o"
-  "/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/src/BigInteger.cpp" "/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles/CPP_HW1.dir/src/BigInteger.cpp.o"
-  "/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/tests/BigIntTests.cpp" "/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles/CPP_HW1.dir/tests/BigIntTests.cpp.o"
+  "/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/main.cpp" "/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles/CPP_HW1.dir/main.cpp.o"
+  "/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/src/BigInteger.cpp" "/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles/CPP_HW1.dir/src/BigInteger.cpp.o"
+  "/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/tests/BigIntTests.cpp" "/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles/CPP_HW1.dir/tests/BigIntTests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -26,7 +26,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

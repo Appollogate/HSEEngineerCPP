@@ -59,7 +59,7 @@ BigInteger &BigInteger::operator=(const BigInteger &rhs) = default;
 
 std::string BigInteger::GetStringRepr() const {
     std::ostringstream stream;
-    if (is_negative) {
+    if (is_negative && !is_zero()) {
         stream << "-";
     }
     for (int i = static_cast<int>(digits.size() - 1); i >= 0; --i) {
@@ -239,7 +239,7 @@ void BigInteger::add(const BigInteger &rhs) {
 
 void BigInteger::subtract(const BigInteger &rhs) {
     // Determine a criteria for the resulting sign
-    bool is_res_neg = is_negative && abs_goe(rhs) || !is_negative && rhs.abs_goe(*this);
+    bool is_res_neg = (is_negative && abs_goe(rhs)) || (!is_negative && !abs_goe(rhs));
     // Determine if the left argument absolute value is larger than the right one's
     bool is_lhs_bigger = abs_goe(rhs);
     // Result is always writen in *this, regardless of which operand is greater by absolute value.
@@ -280,8 +280,8 @@ BigInteger BigInteger::SelectClosestByFront(const BigInteger &rhs, int div_len) 
     return selected;
 }
 
-ushort BigInteger::GetMultiplier(const BigInteger &rhs) const {
-    for (ushort i = 0; i < 10; ++i) {
+int BigInteger::GetMultiplier(const BigInteger &rhs) const {
+    for (short i = 0; i < 10; ++i) {
         if (!this->abs_goe(rhs * i)) {
             return i - 1;
         }
@@ -290,7 +290,7 @@ ushort BigInteger::GetMultiplier(const BigInteger &rhs) const {
 }
 
 std::pair<BigInteger, BigInteger> BigInteger::divide(const BigInteger &rhs) const {
-    if (rhs == 0){
+    if (rhs == 0) {
         throw std::invalid_argument("Cannot divide by zero.\n");
     }
     BigInteger current;
@@ -299,20 +299,24 @@ std::pair<BigInteger, BigInteger> BigInteger::divide(const BigInteger &rhs) cons
     current = digits.size() <= rhs.digits.size() ?
               *this :
               SelectClosestByFront(rhs, static_cast<int>(rhs.digits.size()));
+    // Set the left operand's sign as positive for now
+    current.is_negative = false;
     int lhs_curr_ind = static_cast<int>(current.digits.size() - 1);
     while (lhs_curr_ind < this->digits.size()) {
-        ushort multiplier = current.GetMultiplier(rhs);
+        int multiplier = current.GetMultiplier(rhs);
         quotient.digits.push_back(multiplier);
+        // Quick fix for keeping both operands' signs positive
+        multiplier = rhs.is_negative ? -multiplier : multiplier;
         current -= rhs * multiplier;
         ++lhs_curr_ind;
-        while (rhs.abs_goe(current) && lhs_curr_ind < static_cast<int>(this->digits.size())) {
+        if (lhs_curr_ind < static_cast<int>(this->digits.size())) {
             current.digits.insert(current.digits.begin(), digits[digits.size() - lhs_curr_ind - 1]);
         }
     }
     std::reverse(quotient.digits.begin(), quotient.digits.end());
-    // Determine the signs for quotient and remainder
-    quotient.is_negative = this->is_negative ^ rhs.is_negative;
-    current.is_negative = this->is_negative;
+    // Determine the signs for quotient and remainder. Zero values are always non-negative
+    quotient.is_negative = quotient.is_zero() ? false : this->is_negative ^ rhs.is_negative;
+    current.is_negative = current.is_zero() ? false : this->is_negative;
     // At this point "current" is the remainder
     return std::make_pair(quotient, current);
 }
@@ -326,8 +330,14 @@ void BigInteger::RemoveLeadingZeros() {
 bool BigInteger::abs_goe(const BigInteger &rhs) const {
     BigInteger left(*this);
     BigInteger right(rhs);
+    left.RemoveLeadingZeros();
+    right.RemoveLeadingZeros();
     // Mark both numbers as non-negative
     left.is_negative = false;
     right.is_negative = false;
     return left >= right;
+}
+
+bool BigInteger::is_zero() const {
+    return std::all_of(digits.begin(), digits.end(), [](ushort i) { return i == 0; });
 }

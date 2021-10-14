@@ -98,7 +98,7 @@ TEST(BigIntTest, UnaryMinusTest){
     EXPECT_EQ(-BigInteger(100), -100);
 }
 
-TEST(BigIntTest, MultiplicaionTest){
+TEST(BigIntTest, MultiplicationTest){
     BigInteger bi1(24);
     BigInteger bi2(58);
     BigInteger one(1);
@@ -114,4 +114,31 @@ TEST(BigIntTest, MultiplicaionTest){
     EXPECT_EQ(-one * bi1, -24);
     EXPECT_EQ(zero * bi1, 0);
     EXPECT_EQ(bi1 * zero, 0);
+}
+
+TEST(BigIntTest, DivisionTest){
+    BigInteger bi1(5624);
+    BigInteger bi2(71);
+    BigInteger one(1);
+    BigInteger zero(0);
+    EXPECT_EQ(bi1 / bi2, 79);
+    EXPECT_EQ(bi1 / -bi2, -79);
+    EXPECT_EQ(-bi1 / bi2, -79);
+    EXPECT_EQ(bi1 % bi2, 15);
+    EXPECT_EQ(bi1 % bi2, 15);
+    EXPECT_EQ(bi1 % bi2, 15);
+    EXPECT_EQ(bi2 / bi1, 0);
+    EXPECT_EQ(bi2 % bi1, 71);
+    EXPECT_EQ(bi1 / bi1, 1);
+    EXPECT_EQ(bi1 % bi1, 0);
+    EXPECT_EQ(bi1 / -bi1, -1);
+    EXPECT_EQ(-bi1 / bi1, -1);
+    EXPECT_EQ(bi1 % -bi1, 0);
+    EXPECT_EQ(-bi1 % bi1, 0);
+    EXPECT_EQ(bi1 / one, bi1);
+    EXPECT_EQ(bi1 % one, zero);
+    EXPECT_EQ(zero / bi1, zero);
+    EXPECT_EQ(zero % bi1, zero);
+    EXPECT_ANY_THROW(bi1 / zero);
+    EXPECT_ANY_THROW(bi1 % zero);
 }

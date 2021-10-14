@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/appollogate/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1
+CMAKE_SOURCE_DIR = /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend.make
@@ -68,16 +68,16 @@ include lib/googletest/googlemock/CMakeFiles/gmock_main.dir/flags.make
 
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: lib/googletest/googlemock/CMakeFiles/gmock_main.dir/flags.make
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: ../lib/googletest/googlemock/src/gmock_main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googlemock && /usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/lib/googletest/googlemock/src/gmock_main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/lib/googletest/googlemock/src/gmock_main.cc
 
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gmock_main.dir/src/gmock_main.cc.i"
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googlemock && /usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/lib/googletest/googlemock/src/gmock_main.cc > CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/lib/googletest/googlemock/src/gmock_main.cc > CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
 
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gmock_main.dir/src/gmock_main.cc.s"
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googlemock && /usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/lib/googletest/googlemock/src/gmock_main.cc -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/lib/googletest/googlemock/src/gmock_main.cc -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
 
 # Object files for target gmock_main
 gmock_main_OBJECTS = \
@@ -89,19 +89,19 @@ gmock_main_EXTERNAL_OBJECTS =
 lib/libgmock_maind.a: lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
 lib/libgmock_maind.a: lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make
 lib/libgmock_maind.a: lib/googletest/googlemock/CMakeFiles/gmock_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../libgmock_maind.a"
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean_target.cmake
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock_main.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../libgmock_maind.a"
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean_target.cmake
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock_main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build: lib/libgmock_maind.a
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
 
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean:
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean.cmake
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean.cmake
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
 
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend:
-	cd /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1 /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/lib/googletest/googlemock /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googlemock /home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/lib/googletest/googlemock /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googlemock /home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend
 

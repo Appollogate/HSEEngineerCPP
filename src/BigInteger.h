@@ -10,6 +10,7 @@
 #include <utility>
 #include <exception>
 #include <sstream>
+#include <algorithm>
 
 
 class BigInteger {
@@ -75,9 +76,11 @@ private:
 
     [[nodiscard]] BigInteger SelectClosestByFront(const BigInteger &, int div_len) const;
 
-    [[nodiscard]] ushort GetMultiplier(const BigInteger &) const;
+    [[nodiscard]] int GetMultiplier(const BigInteger &) const;
 
     [[nodiscard]] bool abs_goe(const BigInteger &) const; // Absolute Greater or Equal
+
+    bool is_zero() const;
 
     std::vector<ushort> digits;
     bool is_negative;

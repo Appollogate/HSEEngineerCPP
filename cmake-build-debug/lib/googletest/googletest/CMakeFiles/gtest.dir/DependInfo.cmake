@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/lib/googletest/googletest/src/gtest-all.cc" "/home/appollogate/Documents/CPP_Spec/Homeworks/HW1_NEW/CPP_HW1/cmake-build-debug/lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+  "/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/lib/googletest/googletest/src/gtest-all.cc" "/home/appollogate/Documents/CLion_Projects/BigIntegerTask/HSEEngineerCPP/cmake-build-debug/lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
