@@ -80,7 +80,7 @@ private:
 
     [[nodiscard]] bool abs_goe(const BigInteger &) const; // Absolute Greater or Equal
 
-    bool is_zero() const;
+    [[nodiscard]] bool is_zero() const;
 
     std::vector<ushort> digits;
     bool is_negative;
