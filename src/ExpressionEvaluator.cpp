@@ -7,7 +7,21 @@
 ExpressionEvaluator::ExpressionEvaluator(const std::string_view &s) : expression(s) {}
 
 bool ExpressionEvaluator::IsExpressionValid() {
-    return IsMathExpressionCorrect(); // TODO: temp
+    if (!IsCharSetCorrect()){
+        std::cerr << "\nERROR: Expression \"" << expression << "\" contains illegal symbols.\n"
+                     "Legal symbols include digits, spaces, certain math operators (+, -, *, /, %) "
+                     "and round parentheses. All other symbols are illegal.\n";
+        return false;
+    }
+    if (!IsParenthesesSequenceCorrect()){
+        std::cerr << "\nERROR: Expression \"" << expression << "\" contains invalid parenthesis sequence.\n";
+        return false;
+    }
+    if (!IsMathExpressionCorrect()){
+        std::cerr << "\nERROR: Given math expression \"" << expression << "\" has wrong format.\n";
+        return false;
+    }
+    return true;
 }
 
 bool ExpressionEvaluator::IsCharSetCorrect() {
