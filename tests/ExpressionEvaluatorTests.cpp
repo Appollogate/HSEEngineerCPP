@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include "../src/ExpressionEvaluator.h"
 
-TEST(EETest, CharSetCorrectness){
+TEST(EETest, CharSetCorrectness) {
     EXPECT_TRUE(ExpressionEvaluator("12345 + 67890").IsExpressionValid());
     EXPECT_TRUE(ExpressionEvaluator("12345 - 67890").IsExpressionValid());
     EXPECT_TRUE(ExpressionEvaluator("12345 * 67890").IsExpressionValid());
@@ -17,7 +17,7 @@ TEST(EETest, CharSetCorrectness){
     EXPECT_FALSE(ExpressionEvaluator("~(^w^)~").IsExpressionValid());
 }
 
-TEST(EETest, ParenthesisCorrectness){
+TEST(EETest, ParenthesisCorrectness) {
     EXPECT_TRUE(ExpressionEvaluator("1 + 2").IsExpressionValid());
     EXPECT_TRUE(ExpressionEvaluator("(1 + 2)").IsExpressionValid());
     EXPECT_TRUE(ExpressionEvaluator("((1 + 2))").IsExpressionValid());
@@ -31,7 +31,7 @@ TEST(EETest, ParenthesisCorrectness){
     EXPECT_FALSE(ExpressionEvaluator("((2 * (2 + 1) + (1 + 2) - 1)").IsExpressionValid());
 }
 
-TEST(EETest, MathExpressionFormatCorrectness){
+TEST(EETest, MathExpressionFormatCorrectness) {
     // Assume that a correct expression should not have unary + or - operators.
     EXPECT_TRUE(ExpressionEvaluator("(1 + 2) - 3 * 4 / 5 % 6").IsExpressionValid());
     EXPECT_TRUE(ExpressionEvaluator("12345").IsExpressionValid());
@@ -47,7 +47,7 @@ TEST(EETest, MathExpressionFormatCorrectness){
     EXPECT_FALSE(ExpressionEvaluator("* 1").IsExpressionValid());
 }
 
-TEST(EETest, MathExpressionEvaluateTest){
+TEST(EETest, MathExpressionEvaluateTest) {
     EXPECT_EQ(ExpressionEvaluator("6 + 3").Evaluate(), BigInteger("9"));
     EXPECT_EQ(ExpressionEvaluator("6 - 3").Evaluate(), BigInteger("3"));
     EXPECT_EQ(ExpressionEvaluator("6 * 3").Evaluate(), BigInteger("18"));
