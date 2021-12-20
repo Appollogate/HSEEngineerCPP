@@ -65,6 +65,8 @@ public:
 
     friend std::ostream &operator<<(std::ostream &, const BigInteger &);
 
+    static BigInteger getResultFromOperation(const BigInteger &, const BigInteger &, const std::string &);
+
 private:
     void add(const BigInteger &);
 

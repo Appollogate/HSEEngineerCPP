@@ -341,3 +341,19 @@ bool BigInteger::abs_goe(const BigInteger &rhs) const {
 bool BigInteger::is_zero() const {
     return std::all_of(digits.begin(), digits.end(), [](ushort i) { return i == 0; });
 }
+
+BigInteger BigInteger::getResultFromOperation(const BigInteger &lhs, const BigInteger &rhs, const std::string &op) {
+    if (op == "+") {
+        return lhs + rhs;
+    } else if (op == "-") {
+        return lhs - rhs;
+    } else if (op == "*") {
+        return lhs * rhs;
+    } else if (op == "/") {
+        return lhs / rhs;
+    } else if (op == "%") {
+        return lhs % rhs;
+    } else { // Unsupported operator
+        throw std::invalid_argument("Cannot resolve unknown operator " + op);
+    }
+}
