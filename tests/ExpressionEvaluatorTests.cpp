@@ -44,4 +44,16 @@ TEST(EETest, MathExpressionFormatCorrectness){
     EXPECT_FALSE(ExpressionEvaluator("1 (1 + 2)").IsExpressionValid());
     EXPECT_FALSE(ExpressionEvaluator("1 - ()").IsExpressionValid());
     EXPECT_FALSE(ExpressionEvaluator("(2 - )").IsExpressionValid());
+    EXPECT_FALSE(ExpressionEvaluator("* 1").IsExpressionValid());
+}
+
+TEST(EETest, MathExpressionEvaluateTest){
+    EXPECT_EQ(ExpressionEvaluator("6 + 3").Evaluate(), BigInteger("9"));
+    EXPECT_EQ(ExpressionEvaluator("6 - 3").Evaluate(), BigInteger("3"));
+    EXPECT_EQ(ExpressionEvaluator("6 * 3").Evaluate(), BigInteger("18"));
+    EXPECT_EQ(ExpressionEvaluator("6 / 3").Evaluate(), BigInteger("2"));
+    EXPECT_EQ(ExpressionEvaluator("6 % 3").Evaluate(), BigInteger("0"));
+    EXPECT_EQ(ExpressionEvaluator("6 + 2 * 3").Evaluate(), BigInteger("12"));
+    EXPECT_EQ(ExpressionEvaluator("(6 + 2) * 3").Evaluate(), BigInteger("24"));
+    EXPECT_EQ(ExpressionEvaluator("(24 - (32 - (6 + 5 * 10)) - 18) / 3").Evaluate(), BigInteger("10"));
 }

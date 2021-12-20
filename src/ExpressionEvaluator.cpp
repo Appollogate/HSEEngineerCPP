@@ -4,7 +4,9 @@
 
 #include "ExpressionEvaluator.h"
 
-ExpressionEvaluator::ExpressionEvaluator(const std::string_view &s) : expression(s) {}
+#include <utility>
+
+ExpressionEvaluator::ExpressionEvaluator(std::string s) : expression(std::move(s)) {}
 
 BigInteger ExpressionEvaluator::Evaluate() {
     // First, check if expression is formatted correctly.
@@ -124,13 +126,12 @@ std::vector<std::string> ExpressionEvaluator::GetRPNRepresentation() const {
             }
             // If the next token is an operator o1 while not being a parenthesis
             if (c == '+' || c == '-' || c == '*' || c == '/' || c == '%') {
-                char o2 = operator_stack.empty() ? '0' : operator_stack.top();
                 // While there is an operator o2 other than the left parenthesis at the top of the
                 // operator stack and o2 has greater or equal precedence than o1
-                while (!operator_stack.empty() && o2 != '(' &&
-                       HasGreaterOrEqualPrecedence(o2, c)) {
+                while (!operator_stack.empty() && operator_stack.top() != '(' &&
+                       HasGreaterOrEqualPrecedence(operator_stack.top(), c)) {
                     // Pop o2 from the operator stack in the output queue
-                    result.push_back({o2});
+                    result.push_back({operator_stack.top()});
                     operator_stack.pop();
                 }
                 // Push o1 on the operator stack

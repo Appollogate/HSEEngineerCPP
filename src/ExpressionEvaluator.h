@@ -19,7 +19,7 @@
 // Evaluating expressions with unary operators is not implemented... yet.
 class ExpressionEvaluator {
 public:
-    explicit ExpressionEvaluator(const std::string_view &);
+    explicit ExpressionEvaluator(std::string);
 
     bool IsExpressionValid();
 
